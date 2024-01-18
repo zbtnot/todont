@@ -2,11 +2,11 @@ dep:
     npm ci
 
 build: dep
-    node ./esbuild.config.js
+    node --env-file=./.env ./esbuild.config.js
     npx tailwindcss -m -i ./src/style.css -o ./public/dist/style.min.css
 
 watch:
-    node ./esbuild.config.js --watch &
+    node --env-file=./.env ./esbuild.config.js --watch &
     npx tailwindcss -m -i ./src/style.css -o ./public/dist/style.min.css --watch
 
 watch-ts: dep
