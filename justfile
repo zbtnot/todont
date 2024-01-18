@@ -30,3 +30,7 @@ docker-stop:
 # tests
 hurl:
     hurl --variable host=http://localhost:8081 --test test/api.hurl
+
+# storybook
+storybook:
+    npx storybook dev --no-open -p 6006
