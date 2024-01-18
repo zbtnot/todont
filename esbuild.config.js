@@ -25,13 +25,11 @@ const frontendConfig = {
     platform: 'browser',
     entryPoints: ['src/frontend.tsx'],
     bundle: true,
-    minify: false,
-    sourcemap: true,
+    minify: (process.env.MODE ?? 'production') === 'production',
+    sourcemap: (process.env.MODE ?? 'production') !== 'production',
     outfile: 'public/dist/index.min.js',
+    treeShaking: true,
     plugins: [],
-    define: {
-        DEBUG: 'true',
-    },
 };
 
 if (process.argv.includes('--watch')) {
