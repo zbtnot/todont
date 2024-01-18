@@ -1,6 +1,17 @@
-# environment cruft
+# keeps the docker directory structure
+docker/mysql/*
+!docker/mysql/.gitkeep
+
+# keeps the public/dist structure
+public/dist/*
+!public/dist/.gitkeep
+
+# skip environment cruft
 .idea
 .DS_Store
 .env
 *.log
 *.map
+
+# javascript dependencies
+node_modules
