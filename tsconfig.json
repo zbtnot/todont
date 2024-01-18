@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+      "target": "ES2022",
+      "module": "commonjs",
+      "allowSyntheticDefaultImports": true,
+      "jsx": "react",
+      "baseUrl": "./src",
+      "paths": {
+          "@/*": ["./*"]
+      }
+  }
+}
