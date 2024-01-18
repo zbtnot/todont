@@ -1,0 +1,6 @@
+# environment cruft
+.idea
+.DS_Store
+.env
+*.log
+*.map
