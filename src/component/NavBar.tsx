@@ -10,7 +10,7 @@ interface NavBarProps {
 export default function NavBar({ className = '', children }: PropsWithChildren<NavBarProps>) {
     return (
         <>
-            <div className={'flex flex-row ' + className}>
+            <div className={`flex flex-row ${className}`}>
                 {children}
             </div>
         </>

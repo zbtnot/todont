@@ -6,5 +6,5 @@ const root = ReactDOM.createRoot(document.getElementById('app')!);
 root.render(
     <StrictMode>
         <TodoPage />
-    </StrictMode>
+    </StrictMode>,
 );

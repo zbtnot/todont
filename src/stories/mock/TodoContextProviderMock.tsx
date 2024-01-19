@@ -5,7 +5,7 @@ import TodoFetchRepository from '@/repository/TodoFetchRepository';
 /**
  * Provides a wrapper for TodoContext.Provider so stories that leverage useContext() render correctly.
  */
-export const TodoContextProviderMock = ({ children }) => {
+export default function TodoContextProviderMock({ children }) {
     const dummyCallback = () => {
     };
     const providerValues: TodoContextValues = {
@@ -16,4 +16,4 @@ export const TodoContextProviderMock = ({ children }) => {
     };
 
     return <TodoContext.Provider value={providerValues}>{children}</TodoContext.Provider>;
-};
+}

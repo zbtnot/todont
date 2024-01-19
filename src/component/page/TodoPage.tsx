@@ -20,14 +20,14 @@ export default function TodoPage() {
         setTodos([...todos, todo]);
     };
 
-    const updateTodo = (update: Todo) => {
+    const updateTodo = (update: Todo): void => {
         setTodos(todos.map((todo) => todo.id === update.id ? update : todo));
     };
 
     useEffect(() => {
         const fetchTodos = async () => {
-            const todos = await todoFetchRepository.readTodos();
-            setTodos(todos);
+            const fetchedTodos = await todoFetchRepository.readTodos();
+            setTodos(fetchedTodos);
         };
         fetchTodos().catch((e) => setError(e));
     }, []);

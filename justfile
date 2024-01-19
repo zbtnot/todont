@@ -29,3 +29,7 @@ hurl:
 # storybook
 storybook:
     npx storybook dev --no-open -p 6006
+
+# eslint
+lint:
+    npx eslint ./src

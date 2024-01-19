@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import TodoList from '@/component/todo/TodoList';
-import { TodoContextProviderMock } from '@/stories/mock/TodoContextProviderMock';
+import TodoContextProviderMock from '@/stories/mock/TodoContextProviderMock';
 import { Todo } from '@/model/Todo';
 
 const meta: Meta<typeof TodoList> = {
@@ -23,7 +23,7 @@ const incompletedTodo: Todo = {
 export const WithTodos: Story = {
     render: () => <TodoContextProviderMock>
         <TodoList todos={[
-            completedTodo, incompletedTodo
+            completedTodo, incompletedTodo,
         ]} />
     </TodoContextProviderMock>,
 };
@@ -37,7 +37,7 @@ export const WithoutTodos: Story = {
 export const CompletedTodos: Story = {
     render: () => <TodoContextProviderMock>
         <TodoList todos={[
-            completedTodo
+            completedTodo,
         ]} />
     </TodoContextProviderMock>,
 };
@@ -45,7 +45,7 @@ export const CompletedTodos: Story = {
 export const IncompletedTodos: Story = {
     render: () => <TodoContextProviderMock>
         <TodoList todos={[
-            incompletedTodo
+            incompletedTodo,
         ]} />
     </TodoContextProviderMock>,
 };
