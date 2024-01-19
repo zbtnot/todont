@@ -1,3 +1,4 @@
+# assembly of the system
 dep:
     npm ci
 
@@ -7,12 +8,6 @@ build: dep
 
 watch:
     node --env-file=./.env ./esbuild.config.js --watch &
-    npx tailwindcss -m -i ./src/style.css -o ./public/dist/style.min.css --watch
-
-watch-ts: dep
-    node ./esbuild.config.js --watch
-
-watch-css: dep
     npx tailwindcss -m -i ./src/style.css -o ./public/dist/style.min.css --watch
 
 # schema

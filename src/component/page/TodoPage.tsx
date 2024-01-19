@@ -5,6 +5,7 @@ import TodoFetchRepository from '@/repository/TodoFetchRepository';
 import { Todo } from '@/model/Todo';
 import TodoList from '@/component/todo/TodoList';
 import { TodoContext } from '@/component/state/TodoContext';
+import NotificationBar from '@/component/NotificationBar';
 
 const todoFetchRepository = new TodoFetchRepository();
 /**
@@ -40,7 +41,8 @@ export default function TodoPage() {
             <NavBar className="bg-zinc-700">
                 <Logo className="w-2/12 mr-2 py-2 text-slate-300" />
             </NavBar>
-            <TodoList todos={todos} />
+            <NotificationBar className="text-xl px-2" message={error?.message} />
+            { !error ? <TodoList todos={todos} /> : '' }
         </TodoContext.Provider>
     );
 }
