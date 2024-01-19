@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import NavBar from '../component/NavBar';
+import NavBar from '@/component/NavBar';
 
 const meta: Meta<typeof NavBar> = {
     component: NavBar,
