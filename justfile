@@ -26,6 +26,9 @@ docker-stop:
 hurl:
     hurl --variable host=http://localhost:8081 --test test/api.hurl
 
+jest:
+    npx jest
+
 # storybook
 storybook:
     npx storybook dev --no-open -p 6006
