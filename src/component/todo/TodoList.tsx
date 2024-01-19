@@ -45,4 +45,4 @@ export default function TodoList({ todos }: TodoListProps) {
             </div>
         </>
     );
-};
+}

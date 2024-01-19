@@ -10,5 +10,5 @@ export default meta;
 type Story = StoryObj<typeof NotificationBar>;
 
 export const WithMessage: Story = {
-    render: () => <NotificationBar message={'A message!'} />
+    render: () => <NotificationBar message={'A message!'} />,
 };

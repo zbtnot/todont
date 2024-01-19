@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import TodoItem from '@/component/todo/TodoItem';
 import { Todo } from '@/model/Todo';
-import { TodoContextProviderMock } from '@/stories/mock/TodoContextProviderMock';
+import TodoContextProviderMock from '@/stories/mock/TodoContextProviderMock';
 
 const meta: Meta<typeof TodoItem> = {
     component: TodoItem,
@@ -10,7 +10,6 @@ const meta: Meta<typeof TodoItem> = {
 export default meta;
 
 type Story = StoryObj<typeof TodoItem>;
-
 
 const incompleteTodo: Todo = {
     description: 'this is an incomplete task',

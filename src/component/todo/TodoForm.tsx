@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Todo } from '@/model/Todo';
-import { TodoContext } from '@/component/state/TodoContext';
+import { TodoContext, TodoContextValues } from '@/component/state/TodoContext';
 
 interface TodoBoxProps {
     className?: string;
@@ -11,13 +11,13 @@ interface TodoBoxProps {
  */
 export default function TodoForm({ className = '' }: TodoBoxProps) {
     const [description, setDescription] = useState<string>('');
-    const { setError, addTodo, todoFetchRepository } = useContext(TodoContext);
+    const { setError, addTodo, todoFetchRepository } = useContext<TodoContextValues>(TodoContext);
 
     const handleKeyboardAdd = async (input: React.KeyboardEvent<HTMLInputElement>): Promise<void> => {
         if (input.key !== 'Enter') {
             return;
         }
-        let todo: Todo = {
+        const todo: Todo = {
             description,
             done: false,
         };

@@ -31,13 +31,11 @@ app.get(
 
         // boolean types in mysql are actually tinyint(1),
         // so this map converts them to the correct type.
-        todos = todos.map<Todo>((todo): Todo => {
-            return {
-                id: todo.id,
-                description: todo.description,
-                done: Boolean(todo.done),
-            };
-        });
+        todos = todos.map<Todo>((todo): Todo => ({
+            id: todo.id,
+            description: todo.description,
+            done: Boolean(todo.done),
+        }));
 
         res.json(todos);
     },
@@ -48,7 +46,7 @@ app.get(
     [],
     async (req: Request, res: Response): Promise<void> => {
         const { todoId } = req.params;
-        let todo: Todo | undefined = await db<Todo>('todo')
+        const todo: Todo | undefined = await db<Todo>('todo')
             .select([
                 'id',
                 'description',
@@ -118,5 +116,6 @@ app.delete(
     },
 );
 
+// eslint-disable-next-line no-console
 console.info('listening on 80');
 app.listen(80);

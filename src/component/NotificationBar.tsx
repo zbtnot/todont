@@ -11,8 +11,8 @@ interface NotificationBarProps {
 export default function NotificationBar({ className = '', message = '' }: NotificationBarProps) {
     return (
         <>
-            {message.length === 0 ? '' :
-                <div className={"bg-red-300 text-red-800 " + className}>
+            {message.length === 0 ? ''
+                : <div className={`bg-red-300 text-red-800 ${className}`}>
                     {message}
                 </div>
             }
